@@ -1,0 +1,9 @@
+midsceneVersion: 1.3.7
+cacheId: default
+caches:
+  - type: locate
+    prompt: 「取引所株価比較」リンク
+    cache:
+      xpaths:
+        - >-
+          /html/body/div[3]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/form[2]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[normalize-space()="取引所株価比較"]

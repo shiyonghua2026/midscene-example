@@ -1,0 +1,62 @@
+midsceneVersion: 1.3.4
+cacheId: sbi-etgate-search.spec.ts(SBI-ETGate---国内株式で4812を検索して選択)
+caches:
+  - type: plan
+    prompt: ページ上部の銘柄検索エリアにある種類・区分のプルダウン（デフォルト値が表示されているセレクト）をクリックする
+    yamlWorkflow: |
+      tasks:
+        - name: ページ上部の銘柄検索エリアにある種類・区分のプルダウン（デフォルト値が表示されているセレクト）をクリックする
+          flow:
+            - aiTap: ''
+              locate: 銘柄検索エリアの種類・区分プルダウン（国内株式）
+            - aiTap: ''
+              locate: 銘柄検索エリアの「国内株式」プルダウン
+  - type: plan
+    prompt: プルダウンメニュー内の「国内株式」オプションを選択する
+    yamlWorkflow: |
+      tasks:
+        - name: プルダウンメニュー内の「国内株式」オプションを選択する
+          flow:
+            - aiTap: ''
+              locate: 国内株式 option in the pull-down menu
+  - type: locate
+    prompt: 銘柄検索エリアの種類・区分プルダウン（国内株式）
+    cache:
+      xpaths:
+        - >-
+          /html/body/table[1]/tbody[1]/tr[1]/td[1]/div[5]/ul[normalize-space()="セミナー・イベント一覧
+          IR説明会（個人投資家向けオンライン会社説明会） 職場や学校等での金融教育に関するお問い合わせ"]
+  - type: locate
+    prompt: 銘柄検索エリアの「国内株式」プルダウン
+    cache:
+      xpaths:
+        - >-
+          /html/body/header[1]/nav[1]/section[1]/div[2]/div[1]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/select[normalize-space()="国内株式
+          外国株式 投資信託"]
+  - type: locate
+    prompt: 国内株式 option in the pull-down menu
+    cache:
+      xpaths:
+        - >-
+          /html/body/table[1]/tbody[1]/tr[1]/td[1]/div[5]/ul[normalize-space()="セミナー・イベント一覧
+          IR説明会（個人投資家向けオンライン会社説明会） 職場や学校等での金融教育に関するお問い合わせ"]
+  - type: locate
+    prompt: Stock code/name input field
+    cache:
+      xpaths:
+        - /html/body
+  - type: locate
+    prompt: 銘柄・銘柄コード入力ボックス
+    cache:
+      xpaths:
+        - /html/body
+  - type: locate
+    prompt: 銘柄・銘柄コード入力ボックス
+    cache:
+      xpaths:
+        - /html/body
+  - type: locate
+    prompt: 銘柄・銘柄コード入力ボックス
+    cache:
+      xpaths:
+        - /html/body
